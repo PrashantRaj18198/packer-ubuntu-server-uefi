@@ -12,6 +12,6 @@
 #   See the License for the specific language governing permissions and
 #  limitations under the License.
 
-## Packer Variables for Ubuntu 22.04.2 Live Server (Jammy Jellyfish)
-ubuntu_version  = "22.04.2"
-ubuntu_iso_file = "ubuntu-22.04.2-live-server-amd64.iso"
+## Packer Variables for Ubuntu 22.04.3 Live Server (Jammy Jellyfish)
+ubuntu_version  = "jammy"
+ubuntu_iso_file = "ubuntu-22.04.3-live-server-amd64.iso"
