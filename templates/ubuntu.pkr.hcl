@@ -68,6 +68,7 @@ source "qemu" "custom_image" {
     ]
     
     boot_wait = "5s"
+    firmware = 'uefi'
 
     # QEMU specific configuration
     cpus             = 4
