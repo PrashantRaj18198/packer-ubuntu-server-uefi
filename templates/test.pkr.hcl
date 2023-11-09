@@ -50,7 +50,7 @@ source "qemu" "provision_source" {
     accelerator     = "kvm"
     disk_size       = "30G"
     qemuargs        = [
-        ["-bios", "/usr/share/OVMF/${lookup(local.ovmf_prefix, var.host_distro, "")}/OVMF_CODE.fd"],
+        # ["-bios", "/usr/share/OVMF/${lookup(local.ovmf_prefix, var.host_distro, "")}/OVMF_CODE.fd"],
         ["-serial", "mon:stdio"],
         ["-device", "virtio-net,netdev=forward,id=net0"],
         ["-netdev", "user,hostfwd=tcp::{{ .SSHHostPort }}-:22,id=forward"],
