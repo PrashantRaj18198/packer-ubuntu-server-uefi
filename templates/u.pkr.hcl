@@ -9,20 +9,13 @@ packer {
 
 source "qemu" "ubuntu" {
   accelerator = "kvm"
-  boot_command = [
-    "<esc><wait>",
-    "install <wait>",
-    "autoinstall ds=nocloud-net;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ <wait>"
-  ]
-  boot_wait = "5s"
   disk_size = 8192
-  http_directory = "http"
-  iso_checksum = "sha256:a4acfda10b18da50e2ec50ccaf860d7f20b389df8765611142305c0e911d16fd"
-  iso_url = "http://releases.ubuntu.com/22.04/ubuntu-22.04.3-live-server-amd64.iso"
-  ssh_username = "ubuntu"
-  ssh_password = "ubuntu"
-  ssh_timeout = "20m"
   format = "qcow2"
+  image_checksum = "sha256:f2c748fd426f4055a0c3a6d01f0282fa75aa89e514d165845fec117cb479d840"
+  image_url = "https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64-disk-kvm.img"
+  ssh_username = "packerubuntu"
+  ssh_password = "packerubuntu"
+  ssh_timeout = "20m"
   vm_name = "aws-ubuntu.qcow2"
 }
 
