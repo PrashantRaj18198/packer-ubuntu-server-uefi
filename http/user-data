@@ -7,12 +7,6 @@ autoinstall:
   ssh:
     install-server: true
     allow-pw: true
-  late-commands:
-    - |
-      if [ -d /sys/firmware/efi ]; then
-        apt-get install -y efibootmgr
-        efibootmgr -o $(efibootmgr | perl -n -e '/Boot(.+)\* ubuntu/ && print $1')
-      fi
   user-data:
     preserve_hostname: false
     hostname: packerubuntu
@@ -21,7 +15,7 @@ autoinstall:
     chpasswd:
       expire: true
       list:
-        - user1:packerubuntu
+        - packerubuntu:packerubuntu
     users:
       - name: admin
         passwd: $6$xyz$74AlwKA3Z5n2L6ujMzm/zQXHCluA4SRc2mBfO2/O5uUc2yM2n2tnbBMi/IVRLJuKwfjrLZjAT7agVfiK7arSy/
@@ -29,7 +23,7 @@ autoinstall:
         lock-passwd: false
         sudo: ALL=(ALL) NOPASSWD:ALL
         shell: /bin/bash
-      - name: user1
+      - name: packerubuntu
         plain_text_passwd: packerubuntu
         lock-passwd: false
         shell: /bin/bash

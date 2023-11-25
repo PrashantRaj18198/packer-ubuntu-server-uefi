@@ -46,3 +46,6 @@ validate-cloudinit:
 	cloud-init schema -c http/user-data
 
 validate: validate-cloudinit validate-packer
+
+build-new:
+	packer build ./templates/aws-ubuntu.pkr.hcl
