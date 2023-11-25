@@ -18,6 +18,7 @@ source "qemu" "ubuntu" {
   ssh_timeout = "20m"
   vm_name = "aws-ubuntu.qcow2"
   headless = true
+  http_directory = "http"
 }
 
 build {
